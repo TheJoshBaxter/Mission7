@@ -34,6 +34,11 @@ namespace Mission7
            });
 
             services.AddScoped<IBookstoreRepository, EFBookstoreRepository>();
+
+            services.AddRazorPages();
+
+            services.AddDistributedMemoryCache();
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,12 +51,33 @@ namespace Mission7
 
             //JB - corresponds to wwwroot
             app.UseStaticFiles();
-
+            app.UseSession();
             app.UseRouting();
 
             app.UseEndpoints(endpoints =>
             {
+                //NOTE: endpoints are executed in order
+                endpoints.MapControllerRoute(
+                    "categorypage",
+                    "{category}/Page{pageNum}",
+                    new { Controller = "Home", action = "Index" });
+
+                //NOTE: on this endpoint I used the name of each attribute thingy, but above I didn't. You don't have to!!! But order matters
+                endpoints.MapControllerRoute(
+                    name: "Paging",
+                    pattern: "Page{pageNum}",
+                    defaults: new { Controller = "Home", action = "Index" }
+                    );
+
+                endpoints.MapControllerRoute(
+                    "category",
+                    "{category}",
+                    new { Controller = "Home", action = "Index", pageNum = 1 });
+
+                //with just this, anything that doesn't match the default controller route will be passed in the slug. Added code above to define the slug more basically
                 endpoints.MapDefaultControllerRoute();
+
+                endpoints.MapRazorPages();
             });
         }
     }
