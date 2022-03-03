@@ -16,6 +16,10 @@
     <None Remove="Views\Shared\Components\" />
     <None Remove="Views\Shared\Components\Categories\" />
     <None Remove="Pages\" />
+    <None Remove="Views\Order\" />
+    <None Remove="Views\Shared\Components\BasketSummary\" />
+    <None Remove="Pages\Shared\" />
+    <None Remove="Pages\Shared\Components\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -30,6 +34,10 @@
     <Folder Include="Views\Shared\Components\" />
     <Folder Include="Views\Shared\Components\Categories\" />
     <Folder Include="Pages\" />
+    <Folder Include="Views\Order\" />
+    <Folder Include="Views\Shared\Components\BasketSummary\" />
+    <Folder Include="Pages\Shared\" />
+    <Folder Include="Pages\Shared\Components\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />
