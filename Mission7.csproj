@@ -20,6 +20,7 @@
     <None Remove="Views\Shared\Components\BasketSummary\" />
     <None Remove="Pages\Shared\" />
     <None Remove="Pages\Shared\Components\" />
+    <None Remove="Pages\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Models\" />
@@ -38,6 +39,7 @@
     <Folder Include="Views\Shared\Components\BasketSummary\" />
     <Folder Include="Pages\Shared\" />
     <Folder Include="Pages\Shared\Components\" />
+    <Folder Include="Pages\Admin\" />
   </ItemGroup>
   <ItemGroup>
     <Content Remove="wwwroot\" />

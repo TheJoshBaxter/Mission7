@@ -35,5 +35,8 @@ namespace Mission7.Models
         public string Country { get; set; }
 
         public bool Gift { get; set; }
+
+        [BindNever]
+        public bool OrderShipped { get; set; }
     }
 }

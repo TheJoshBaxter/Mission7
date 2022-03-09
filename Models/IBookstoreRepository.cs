@@ -9,5 +9,10 @@ namespace Mission7.Models
     {
         //alternative to a list
         IQueryable<Book> Books { get; } //readable, but not writeable
+
+        public void SaveBook(Book b);
+        public void AddBook(Book b);
+        public void DeleteBook(Book b);
+
     }
 }
